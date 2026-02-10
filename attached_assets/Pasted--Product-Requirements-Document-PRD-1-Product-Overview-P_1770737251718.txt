@@ -1,0 +1,202 @@
+# Product Requirements Document (PRD)
+
+## 1. Product Overview
+
+**Product Name:** van sampatti
+**Product Type:** Data-driven environmental monitoring and restoration platform with a public-facing website
+
+**Vision:**
+To enable real-time, data-informed restoration and management of riparian zones using scalable sensing infrastructure, AI-driven analytics, and community engagement.
+
+**Mission:**
+Empower environmental stakeholders with precise, real-time insights and predictive tools to combat riparian degradation, deforestation, runoff, and habitat disruption.
+
+---
+
+## 2. Problem Statement
+
+Riparian zones are critical ecological buffers but are increasingly threatened by deforestation, erosion, runoff, climate variability, and delayed intervention. Current monitoring methods are:
+
+* Manual and labor-intensive
+* Infrequent and reactive
+* Lacking predictive and simulation capabilities
+
+There is a need for a **scalable, automated, and intelligent system** that continuously monitors riparian health, detects anomalies early, and supports adaptive restoration strategies.
+
+---
+
+## 3. Goals & Objectives
+
+### Primary Goals
+
+* Enable real-time monitoring of riparian ecosystems
+* Provide AI-driven insights and actionable restoration recommendations
+* Support long-term planning through predictive modeling and digital twin simulations
+
+### Success Metrics
+
+* Reduction in time to detect environmental anomalies
+* Accuracy of AI predictions (vegetation suitability, erosion risk, rainfall impact)
+* User engagement with analytics dashboards and community features
+
+---
+
+## 4. Target Users
+
+### Primary Users
+
+* Environmental scientists & ecologists
+* Government agencies & policy makers
+* NGOs focused on conservation
+* Academic researchers
+
+### Secondary Users
+
+* Local communities
+* Students and educators
+* Climate-tech innovators
+
+---
+
+## 5. Core Features
+
+### 5.1 Automated Sensing & Monitoring
+
+**Description:**
+A network of stationary, IoT-connected LiDAR sensors integrated with environmental sensors.
+
+**Key Capabilities:**
+
+* LiDAR-based terrain and vegetation mapping
+* Soil moisture monitoring
+* Water quality sensing (turbidity, pH, contaminants)
+* Continuous real-time data ingestion
+
+---
+
+### 5.2 AI-Driven Analytics
+
+**Description:**
+Autonomous machine learning models analyze multimodal sensor data to deliver insights and predictions.
+
+**Capabilities:**
+
+* Anomaly detection (erosion, vegetation loss, flooding risk)
+* Crop and native vegetation suitability prediction
+* Rainfall and runoff forecasting
+* Adaptive management recommendations
+
+---
+
+### 5.3 Digital Twin & Predictive Simulation
+
+**Description:**
+A virtual replica of monitored riparian zones for simulation and planning.
+
+**Capabilities:**
+
+* Scenario testing (replanting strategies, climate events)
+* Long-term restoration outcome forecasting
+* Iterative refinement using real-time feedback loops
+
+---
+
+## 6. Website Requirements
+
+### 6.1 Functional Requirements
+
+* Fully responsive design (desktop, tablet, mobile)
+* Clear navigation with fast load times
+* Modular content architecture for future expansion
+
+### 6.2 Core Website Sections
+
+#### Home
+
+* Project mission and vision
+* High-level explanation of technology
+* Key impact metrics and visuals
+
+#### About the Project
+
+* Problem context and environmental challenges
+* Detailed project background
+
+#### Technology
+
+* Automated sensing & IoT-LiDAR explanation
+* AI/ML analytics pipeline
+* Digital Twin architecture
+
+#### Case Studies
+
+* Pilot deployments
+* Before/after restoration outcomes
+* Data visualizations and maps
+
+#### Blog / Community Forum
+
+* Research updates
+* Community discussions
+* Knowledge sharing and best practices
+
+#### Contact / Get Involved
+
+* Partnership inquiries
+* Volunteer or research collaboration forms
+
+---
+
+## 7. Non-Functional Requirements
+
+* Scalable backend to support expanding sensor networks
+* Secure data storage and access control
+* High availability for real-time monitoring
+* Compliance with environmental data standards
+
+---
+
+## 8. Unique Selling Points (USP)
+
+### Environmental Impact
+
+* Site-specific, real-time restoration recommendations
+* Early detection of environmental degradation
+* Supports biodiversity and habitat recovery
+
+### Technological Innovation
+
+* Multimodal sensor + LiDAR fusion
+* Generative AI models for future state prediction
+* Integrated Digital Twin for simulation-based decision making
+
+---
+
+## 9. Risks & Mitigations
+
+| Risk                | Mitigation                                  |
+| ------------------- | ------------------------------------------- |
+| Sensor failure      | Redundant sensing & health monitoring       |
+| Data noise          | AI-based data validation & filtering        |
+| Adoption resistance | Strong visualization & community engagement |
+
+---
+
+## 10. Future Roadmap
+
+* Mobile application for field teams
+* Integration with satellite imagery
+* Open API for researchers and developers
+* AI-assisted policy recommendation engine
+
+---
+
+## 11. Open Questions
+
+* Initial geographic deployment region?
+* Data ownership and sharing policies?
+* Preferred cloud infrastructure?
+
+---
+
+**Status:** Initial PRD – Ready for stakeholder review
