@@ -12,7 +12,7 @@ export function Footer() {
               <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
                 <Leaf className="w-5 h-5" />
               </div>
-              Van Sampatti
+              वन संपत्ति
             </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed">
               Empowering environmental restoration through cutting-edge LiDAR technology and AI-driven insights. Building a sustainable future, one riverbank at a time.
@@ -42,7 +42,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 mt-12 border-t border-border/50 text-sm text-muted-foreground">
-          <p>© 2024 Van Sampatti. All rights reserved.</p>
+          <p>© 2024 वन संपत्ति. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-foreground">Privacy Policy</a>
             <a href="#" className="hover:text-foreground">Terms of Service</a>

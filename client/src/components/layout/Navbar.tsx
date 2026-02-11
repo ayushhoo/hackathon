@@ -22,7 +22,7 @@ export function Navbar() {
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground shadow-sm shadow-primary/20">
             <Leaf className="w-5 h-5" />
           </div>
-          Van Sampatti
+          वन संपत्ति
         </Link>
 
         {/* Desktop Nav */}
