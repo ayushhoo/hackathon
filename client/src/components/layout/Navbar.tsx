@@ -73,9 +73,11 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="default" size="sm" className="shadow-md shadow-primary/20 hover:shadow-primary/30">
-            {t("nav.Dashboard")}
-          </Button>
+          <Link href="/dashboard" className="no-underline">
+            <Button variant="default" size="sm" className="shadow-md shadow-primary/20 hover:shadow-primary/30">
+              {t("nav.Dashboard")}
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Nav */}
@@ -121,7 +123,11 @@ export function Navbar() {
                     {link.name}
                   </a>
                 ))}
-                <Button className="w-full mt-4">{t("nav.Dashboard")}</Button>
+                <Link href="/dashboard" className="no-underline">
+                  <Button className="w-full mt-4">
+                    {t("nav.Dashboard")}
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
