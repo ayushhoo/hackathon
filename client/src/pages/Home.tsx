@@ -9,8 +9,29 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Users, MessageSquare, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
+  const caseStudies = [
+    {
+      location: t("caseStudies.case1Location"),
+      impact: t("caseStudies.case1Impact"),
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop"
+    },
+    {
+      location: t("caseStudies.case2Location"),
+      impact: t("caseStudies.case2Impact"),
+      image: "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1932&auto=format&fit=crop"
+    },
+    {
+      location: t("caseStudies.case3Location"),
+      impact: t("caseStudies.case3Impact"),
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1874&auto=format&fit=crop"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
@@ -26,30 +47,14 @@ export default function Home() {
         <section id="case-studies" className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Pilot Deployments</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">{t("caseStudies.title")}</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Real-world impact across diverse riparian ecosystems.
+                {t("caseStudies.description")}
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  location: "Ganga Basin, Zone A",
-                  impact: "40% Erosion Reduction",
-                  image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop"
-                },
-                {
-                  location: "Amazon Tributary, SE-5",
-                  impact: "Native Species Recovery",
-                  image: "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1932&auto=format&fit=crop"
-                },
-                {
-                  location: "Nile Delta Buffer",
-                  impact: "Runoff Quality Improved",
-                  image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1874&auto=format&fit=crop"
-                }
-              ].map((item, i) => (
+              {caseStudies.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -69,7 +74,7 @@ export default function Home() {
                     </div>
                     <CardHeader className="p-6">
                       <CardTitle className="text-lg">{item.impact}</CardTitle>
-                      <CardDescription>Continuous monitoring revealed key indicators for bank stabilization.</CardDescription>
+                      <CardDescription>{t("caseStudies.caseDescription")}</CardDescription>
                     </CardHeader>
                   </Card>
                 </motion.div>
@@ -82,9 +87,9 @@ export default function Home() {
         <section id="community" className="py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-2xl mx-auto space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Community & Collaboration</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">{t("community.mainTitle")}</h2>
               <p className="text-muted-foreground">
-                Join a network of environmentalists, data scientists, and local communities working together to restore our riparian zones.
+                {t("community.description")}
               </p>
             </div>
 
@@ -92,22 +97,22 @@ export default function Home() {
               <Card className="hover:border-primary/50 transition-colors border-dashed">
                 <CardHeader>
                   <Users className="w-10 h-10 text-primary mx-auto mb-4" />
-                  <CardTitle>Discussion Forums</CardTitle>
-                  <CardDescription>Share insights, ask questions, and collaborate on restoration strategies.</CardDescription>
+                  <CardTitle>{t("community.forumTitle")}</CardTitle>
+                  <CardDescription>{t("community.forumDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">Join Discussion</Button>
+                  <Button variant="outline" className="w-full">{t("community.joinDiscussion")}</Button>
                 </CardContent>
               </Card>
 
               <Card className="hover:border-primary/50 transition-colors border-dashed">
                 <CardHeader>
                   <MessageSquare className="w-10 h-10 text-accent mx-auto mb-4" />
-                  <CardTitle>Project Blog</CardTitle>
-                  <CardDescription>Read the latest updates on our sensor deployments and restoration success stories.</CardDescription>
+                  <CardTitle>{t("community.blogTitle")}</CardTitle>
+                  <CardDescription>{t("community.blogDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full">Read Articles</Button>
+                  <Button variant="outline" className="w-full">{t("community.readArticles")}</Button>
                 </CardContent>
               </Card>
             </div>
@@ -117,13 +122,13 @@ export default function Home() {
         {/* Contact/Get Involved */}
         <section className="py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-display font-bold">Ready to make an impact?</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">{t("cta.title")}</h2>
             <p className="text-primary-foreground/80 max-w-xl mx-auto">
-              We're looking for research partners, government agencies, and volunteer organizations to scale our impact.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" variant="secondary" className="h-12 px-8">Partnership Inquiry</Button>
-              <Button size="lg" variant="outline" className="h-12 px-8 border-primary-foreground/20 hover:bg-primary-foreground/10">Volunteer Program</Button>
+              <Button size="lg" variant="secondary" className="h-12 px-8">{t("cta.partnership")}</Button>
+              <Button size="lg" variant="outline" className="h-12 px-8 border-primary-foreground/20 hover:bg-primary-foreground/10">{t("cta.volunteer")}</Button>
             </div>
           </div>
         </section>

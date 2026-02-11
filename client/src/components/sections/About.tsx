@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
 import { AlertCircle, TrendingDown, Clock, ShieldCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function About() {
+  const { t } = useTranslation();
+
   const problems = [
-    { icon: TrendingDown, text: "Manual and labor-intensive monitoring" },
-    { icon: Clock, text: "Infrequent and reactive intervention" },
-    { icon: AlertCircle, text: "Lack of predictive and simulation capabilities" }
+    { icon: TrendingDown, text: t("about.problem1") },
+    { icon: Clock, text: t("about.problem2") },
+    { icon: AlertCircle, text: t("about.problem3") }
   ];
 
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-display font-bold">The Riparian Challenge</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold">{t("about.title")}</h2>
           <p className="text-muted-foreground text-lg">
-            Riparian zones are critical ecological buffers but are increasingly threatened by erosion, runoff, and climate variability.
+            {t("about.description")}
           </p>
         </div>
 
@@ -23,10 +26,10 @@ export function About() {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-primary flex items-center gap-2">
                 <ShieldCheck className="w-6 h-6" />
-                Problem Statement
+                {t("about.problemTitle")}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Current monitoring methods are insufficient to address the scale of degradation. There is an urgent need for a <strong>scalable, automated, and intelligent system</strong> that continuously monitors riparian health and supports adaptive restoration.
+                {t("about.problemDesc")}
               </p>
             </div>
 
@@ -48,7 +51,7 @@ export function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
-              <p className="text-white text-sm font-medium italic">"Restoring the lifelines of our planet through data-driven precision."</p>
+              <p className="text-white text-sm font-medium italic">{t("about.quote")}</p>
             </div>
           </div>
         </div>

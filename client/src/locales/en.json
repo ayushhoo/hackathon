@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "brand": "Van Sampatti",
+    "about": "About",
+    "technology": "Technology",
+    "digitalTwin": "Digital Twin",
+    "caseStudies": "Case Studies",
+    "community": "Community",
+    "Dashboard": "Access Dashboard"
+  },
+  "hero": {
+    "badge": "Real-time Environmental Monitoring Active",
+    "mainTitle": "Van Sampatti: The Future of",
+    "highlightTitle": "Riparian Restoration",
+    "description": "Empowering stakeholders with precise, AI-driven insights to combat riparian degradation, deforestation, and habitat disruption.",
+    "exploreMission": "Explore Mission",
+    "viewTechnology": "View Technology",
+    "visionTitle": "Our Vision",
+    "visionDesc": "Real-time, data-informed restoration using scalable sensing infrastructure and AI analytics.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "Empower environmental stakeholders with predictive tools to combat ecological buffers threats."
+  },
+  "about": {
+    "title": "The Riparian Challenge",
+    "description": "Riparian zones are critical ecological buffers but are increasingly threatened by erosion, runoff, and climate variability.",
+    "problemTitle": "Problem Statement",
+    "problemDesc": "Current monitoring methods are insufficient to address the scale of degradation. There is an urgent need for a scalable, automated, and intelligent system that continuously monitors riparian health and supports adaptive restoration.",
+    "problem1": "Manual and labor-intensive monitoring",
+    "problem2": "Infrequent and reactive intervention",
+    "problem3": "Lack of predictive and simulation capabilities",
+    "quote": "Restoring the lifelines of our planet through data-driven precision."
+  },
+  "techstack": {
+    "mainTitle": "Automated Sensing &",
+    "highlightTitle": "Intelligent Analytics",
+    "description": "Our multimodal sensor-LiDAR platform enables early, precise detection of riparian environmental changes. By combining physical sensing with generative models, we create a living digital twin of the ecosystem.",
+    "feature1Title": "LiDAR & IoT Sensors",
+    "feature1Desc": "Stationary, IoT-connected LiDAR sensors provide precise, real-time environmental mapping and anomaly detection.",
+    "feature2Title": "Crop Suitability",
+    "feature2Desc": "AI models analyze soil and climate data to recommend optimal native vegetation for replanting efforts.",
+    "feature3Title": "Rainfall Prediction",
+    "feature3Desc": "Localized micro-climate forecasting helps predict runoff and manage water levels effectively.",
+    "feature4Title": "Adaptive Management",
+    "feature4Desc": "Continuous learning systems that adapt restoration strategies based on real-time feedback loops."
+  },
+  "caseStudies": {
+    "title": "Pilot Deployments",
+    "description": "Real-world impact across diverse riparian ecosystems.",
+    "case1Location": "Ganga Basin, Zone A",
+    "case1Impact": "40% Erosion Reduction",
+    "case2Location": "Amazon Tributary, SE-5",
+    "case2Impact": "Native Species Recovery",
+    "case3Location": "Nile Delta Buffer",
+    "case3Impact": "Runoff Quality Improved",
+    "caseDescription": "Continuous monitoring revealed key indicators for bank stabilization."
+  },
+  "community": {
+    "mainTitle": "Community & Collaboration",
+    "description": "Join a network of environmentalists, data scientists, and local communities working together to restore our riparian zones.",
+    "forumTitle": "Discussion Forums",
+    "forumDesc": "Share insights, ask questions, and collaborate on restoration strategies.",
+    "joinDiscussion": "Join Discussion",
+    "blogTitle": "Project Blog",
+    "blogDesc": "Read the latest updates on our sensor deployments and restoration success stories.",
+    "readArticles": "Read Articles"
+  },
+  "cta": {
+    "title": "Ready to make an impact?",
+    "description": "We're looking for research partners, government agencies, and volunteer organizations to scale our impact.",
+    "partnership": "Partnership Inquiry",
+    "volunteer": "Volunteer Program"
+  },
+  "footer": {
+    "brand": "Van Sampatti",
+    "tagline": "Empowering environmental restoration through cutting-edge LiDAR technology and AI-driven insights. Building a sustainable future, one riverbank at a time.",
+    "platformTitle": "Platform",
+    "technology": "Technology",
+    "dashboard": "Analytics Dashboard",
+    "caseStudies": "Case Studies",
+    "updateTitle": "Stay Updated",
+    "updateDesc": "Join our community and get the latest updates on restoration projects.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "copyright": "© 2024 Van Sampatti. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  },
+  "digitalTwin": {
+    "title": "Digital Twin Simulator",
+    "description": "Explore our AI-powered ecosystem model that simulates restoration scenarios in real-time.",
+    "startSimulation": "Start Simulation",
+    "reset": "Reset",
+    "stage1": "Initializing LiDAR Core",
+    "stage2": "Terrain Mapping & Mesh Generation",
+    "stage3": "Processing AI Restoration Models",
+    "stage4": "Syncing Digital Twin state",
+    "resultTitle": "Simulation Complete",
+    "resultDesc": "Beautiful. The ecosystem model has processed all environmental parameters and is ready for deployment.",
+    "deployModel": "Deploy Model"
+  },
+  "language": {
+    "toggle": "language",
+    "en": "English",
+    "hi": "हिंदी"
+  }
+}

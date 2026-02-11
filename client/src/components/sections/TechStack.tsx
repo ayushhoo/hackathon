@@ -2,28 +2,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ScanLine, Trees, Sprout, CloudRain } from "lucide-react";
 import techDiagram from "@/assets/tech-diagram.png";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function TechStack() {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: ScanLine,
-      title: "LiDAR & IoT Sensors",
-      description: "Stationary, IoT-connected LiDAR sensors provide precise, real-time environmental mapping and anomaly detection."
+      title: t("techstack.feature1Title"),
+      description: t("techstack.feature1Desc")
     },
     {
       icon: Trees,
-      title: "Crop Suitability",
-      description: "AI models analyze soil and climate data to recommend optimal native vegetation for replanting efforts."
+      title: t("techstack.feature2Title"),
+      description: t("techstack.feature2Desc")
     },
     {
       icon: CloudRain,
-      title: "Rainfall Prediction",
-      description: "Localized micro-climate forecasting helps predict runoff and manage water levels effectively."
+      title: t("techstack.feature3Title"),
+      description: t("techstack.feature3Desc")
     },
     {
       icon: Sprout,
-      title: "Adaptive Management",
-      description: "Continuous learning systems that adapt restoration strategies based on real-time feedback loops."
+      title: t("techstack.feature4Title"),
+      description: t("techstack.feature4Desc")
     }
   ];
 
@@ -39,11 +42,11 @@ export function TechStack() {
           >
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                Automated Sensing & <br/>
-                <span className="text-primary">Intelligent Analytics</span>
+                {t("techstack.mainTitle")} <br/>
+                <span className="text-primary">{t("techstack.highlightTitle")}</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our multimodal sensor-LiDAR platform enables early, precise detection of riparian environmental changes. By combining physical sensing with generative models, we create a living digital twin of the ecosystem.
+                {t("techstack.description")}
               </p>
             </div>
 

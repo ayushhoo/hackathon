@@ -1,19 +1,31 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Leaf, Menu, X } from "lucide-react";
+import { Leaf, Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Technology", href: "#technology" },
-    { name: "Digital Twin", href: "#digital-twin" },
-    { name: "Case Studies", href: "#case-studies" },
-    { name: "Community", href: "#community" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.technology"), href: "#technology" },
+    { name: t("nav.digitalTwin"), href: "#digital-twin" },
+    { name: t("nav.caseStudies"), href: "#case-studies" },
+    { name: t("nav.community"), href: "#community" },
   ];
+
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
@@ -22,7 +34,7 @@ export function Navbar() {
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground shadow-sm shadow-primary/20">
             <Leaf className="w-5 h-5" />
           </div>
-          वन संपत्ति
+          {t("nav.brand")}
         </Link>
 
         {/* Desktop Nav */}
@@ -36,13 +48,61 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+          
+          {/* Language Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Globe className="w-4 h-4" />
+                {i18n.language.toUpperCase()}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem 
+                onClick={() => handleLanguageChange("en")}
+                className={i18n.language === "en" ? "bg-primary/10" : ""}
+              >
+                {t("language.en")}
+              </DropdownMenuItem>
+              <DropdownMenuItem 
+                onClick={() => handleLanguageChange("hi")}
+                className={i18n.language === "hi" ? "bg-primary/10" : ""}
+              >
+                {t("language.hi")}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button variant="default" size="sm" className="shadow-md shadow-primary/20 hover:shadow-primary/30">
-            Access Dashboard
+            {t("nav.Dashboard")}
           </Button>
         </div>
 
         {/* Mobile Nav */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          {/* Language Dropdown Mobile */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Globe className="w-4 h-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem 
+                onClick={() => handleLanguageChange("en")}
+                className={i18n.language === "en" ? "bg-primary/10" : ""}
+              >
+                {t("language.en")}
+              </DropdownMenuItem>
+              <DropdownMenuItem 
+                onClick={() => handleLanguageChange("hi")}
+                className={i18n.language === "hi" ? "bg-primary/10" : ""}
+              >
+                {t("language.hi")}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -61,7 +121,7 @@ export function Navbar() {
                     {link.name}
                   </a>
                 ))}
-                <Button className="w-full mt-4">Access Dashboard</Button>
+                <Button className="w-full mt-4">{t("nav.Dashboard")}</Button>
               </div>
             </SheetContent>
           </Sheet>

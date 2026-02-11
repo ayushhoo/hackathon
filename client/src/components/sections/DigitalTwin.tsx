@@ -22,16 +22,18 @@ import {
   AlertTriangle
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from "react-i18next";
 
 // Hardcoded Mock "Backend" Data & Logic for Simulator
 const simulationStages = [
-  { id: 'init', label: 'Initializing LiDAR Core', icon: Database },
-  { id: 'mapping', label: 'Terrain Mapping & Mesh Generation', icon: Globe },
-  { id: 'ai', label: 'Processing AI Restoration Models', icon: Cpu },
-  { id: 'finalize', label: 'Syncing Digital Twin state', icon: RefreshCw }
+  { id: 'init', labelKey: 'digitalTwin.stage1', icon: Database },
+  { id: 'mapping', labelKey: 'digitalTwin.stage2', icon: Globe },
+  { id: 'ai', labelKey: 'digitalTwin.stage3', icon: Cpu },
+  { id: 'finalize', labelKey: 'digitalTwin.stage4', icon: RefreshCw }
 ];
 
 export function DigitalTwin() {
+  const { t } = useTranslation();
   const [isSimulating, setIsSimulating] = useState(false);
   const [currentStage, setCurrentStage] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -91,7 +93,7 @@ export function DigitalTwin() {
                   <div className="flex items-center gap-2">
                     <div className={`w-2 h-2 rounded-full ${isSimulating ? 'bg-yellow-400 animate-ping' : 'bg-primary'}`} />
                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">
-                      {isSimulating ? `Processing: ${simulationStages[currentStage].label}` : 'Simulation Mode: Standby'}
+                      {isSimulating ? `Processing: ${t(simulationStages[currentStage].labelKey)}` : 'Simulation Mode: Standby'}
                     </span>
                   </div>
                   {isSimulating && <Activity className="w-4 h-4 text-primary animate-bounce" />}
@@ -117,9 +119,9 @@ export function DigitalTwin() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em]">
                 Advanced Simulation Suite
               </div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold">Predictive <span className="text-primary">Digital Twin</span></h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold">Predictive <span className="text-primary">{t("digitalTwin.title")}</span></h2>
               <p className="text-zinc-400 text-lg leading-relaxed">
-                A virtual replica of monitored riparian zones for long-term simulation and planning. Test replanting strategies and climate scenarios with our high-fidelity processing core.
+                {t("digitalTwin.description")}
               </p>
             </div>
 
@@ -149,12 +151,12 @@ export function DigitalTwin() {
               {isSimulating ? (
                 <>
                   <Zap className="mr-2 w-5 h-5 animate-pulse fill-current" />
-                  Simulating Ecosystem...
+                  {t("digitalTwin.startSimulation")}
                 </>
               ) : (
                 <>
                   <Play className="mr-2 w-5 h-5 group-hover:fill-current" />
-                  Launch Simulator
+                  {t("digitalTwin.startSimulation")}
                 </>
               )}
             </Button>
@@ -169,9 +171,9 @@ export function DigitalTwin() {
             <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
               <CheckCircle2 className="w-6 h-6 text-emerald-500" />
             </div>
-            <DialogTitle className="text-2xl font-display">Simulation Successful</DialogTitle>
+            <DialogTitle className="text-2xl font-display">{t("digitalTwin.resultTitle")}</DialogTitle>
             <DialogDescription className="text-zinc-400">
-              The Digital Twin has processed all environmental variables for the next 10-year cycle.
+              {t("digitalTwin.resultDesc")}
             </DialogDescription>
           </DialogHeader>
           
@@ -201,10 +203,10 @@ export function DigitalTwin() {
 
           <div className="flex flex-col gap-2">
             <Button className="w-full" variant="default" onClick={() => setShowResult(false)}>
-              Download Detailed Report
+              {t("digitalTwin.deployModel")}
             </Button>
             <Button className="w-full" variant="ghost" onClick={() => setShowResult(false)}>
-              Close Simulator
+              {t("digitalTwin.reset")}
             </Button>
           </div>
         </DialogContent>
