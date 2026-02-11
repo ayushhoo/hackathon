@@ -1,2 +1,1 @@
-# hackathon
-AWS hackathon
+riverathon
