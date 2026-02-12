@@ -9,6 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import GangaBasinMap from "@/components/GangaBasinMap";
 import {
   AreaChart, Area, BarChart, Bar, LineChart, Line, CartesianGrid, XAxis, YAxis,
   ResponsiveContainer, Tooltip, Legend, Cell, ComposedChart
@@ -16,8 +17,8 @@ import {
 import {
   AlertTriangle, AlertCircle, CheckCircle2, TrendingUp, TrendingDown,
   MapPin, Droplet, Zap, Wind, Cloud, Lock, Bell, Settings, Download,
-  Eye, EyeOff, Map as MapIcon, Database, Cpu, Gauge, Activity,
-  Filter, RefreshCw, ZoomIn, ChevronDown, BarChart3, LineChart as LineChartIcon,
+  Eye, EyeOff, Database, Cpu, Gauge, Activity,
+  BarChart3, LineChartIcon,
   FileText, Info
 } from "lucide-react";
 
@@ -565,60 +566,8 @@ export default function AccessDashboard() {
           </CardContent>
         </Card>
 
-        {/* Map View Section */}
-        <Card className="mb-8">
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <MapIcon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <CardTitle>Spatial Risk Analysis</CardTitle>
-                  <CardDescription>Geographic distribution of erosion risk zones</CardDescription>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="gap-2">
-                  <Filter className="w-4 h-4" />
-                  Filters
-                </Button>
-                <Button variant="outline" size="sm" className="gap-2">
-                  <ZoomIn className="w-4 h-4" />
-                  View Map
-                </Button>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-border flex items-center justify-center overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1551109729-4bae89b53caf?q=80&w=2070&auto=format&fit=crop"
-                alt="Ganga Basin Map"
-                className="w-full h-full object-cover opacity-70"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end justify-start p-6">
-                <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4 text-white text-sm">
-                  <div className="font-semibold mb-2">Risk Zone Legend</div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500" />
-                      <span className="text-xs">Critical Risk (70+)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-orange-500" />
-                      <span className="text-xs">High Risk (50-70)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                      <span className="text-xs">Moderate Risk (30-50)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Interactive 3D Ganga Basin Map */}
+        <GangaBasinMap />
 
         {/* Data Export & Documentation */}
         <Card>
